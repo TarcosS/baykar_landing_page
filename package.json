@@ -2,6 +2,7 @@
   "name": "baykar_landing_page",
   "version": "0.1.0",
   "private": true,
+  "author": "Ulaş Kökkılıç",
   "scripts": {
     "dev": "next dev",
     "build": "next build",
