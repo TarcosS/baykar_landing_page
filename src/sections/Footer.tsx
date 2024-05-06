@@ -1,3 +1,4 @@
+import SelectLanguage from "@/components/SelectLanguage";
 import Image from "next/image";
 import Link from "next/link";
 
@@ -107,7 +108,7 @@ const Footer = () => {
             <Link href={"terms"} className="py-3 cursor-pointer text-white">Terms</Link>
             <Link href={"privacy"} className="py-3 cursor-pointer text-white">Privacy</Link>
             <Link href={"contact"} className="py-3 cursor-pointer text-white">Contact</Link>
-            <div className="py-3 cursor-pointer text-white">EN</div>
+            <SelectLanguage />
           </div>
         </div>
       </div>
