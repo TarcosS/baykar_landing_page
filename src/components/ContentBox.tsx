@@ -81,7 +81,7 @@ const ContentBox = ({
             <Button
               key={index}
               size="large"
-              className="border-white"
+              className="border-white hover:bg-slate-50 hover:bg-opacity-10 transition-colors"
               prefixIconPath={button.iconPath}
             >
               {button.text}

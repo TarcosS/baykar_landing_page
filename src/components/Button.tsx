@@ -1,30 +1,34 @@
 "use client";
 
 import Image from "next/image";
-import { useEffect, useState } from "react";
+import { MouseEventHandler, useEffect, useState } from "react";
 
 const Button = ({
   children,
   size = "medium",
   prefixIconPath,
   suffixIconPath,
-  className = ""
+  className = "",
+  onClick,
+  suffixIconClass
 }: {
   children: string;
   size?: "small" | "medium" | "large" | "xlarge";
   prefixIconPath?: string;
   suffixIconPath?: string;
   className?: string;
+  onClick?: MouseEventHandler<HTMLButtonElement>;
+  suffixIconClass?: string;
 }) => {
   const [buttonStyle, setButtonStyle] = useState({
     button: "p-3 border-2 rounded-lg border-amber-900 box-content flex flex-row items-center justify-center flex-none",
-    inner: "whitespace-nowrap font-medium",
+    inner: "whitespace-nowrap font-medium group-hover:!text-slate-900",
   });
 
   useEffect(() => {
     var style = {
       button: "border-2 rounded-lg border-amber-900 box-content flex flex-row items-center justify-center flex-none",
-      inner: "whitespace-nowrap font-medium",
+      inner: "whitespace-nowrap font-medium group-hover:!text-slate-900",
     };
     var customizationStyle = { button: "p-3", inner: "px-4 text-base" };
 
@@ -53,7 +57,10 @@ const Button = ({
   }, [size]);
 
   return (
-    <button className={`${buttonStyle.button} ${className}`}>
+    <button 
+      className={`${buttonStyle.button} ${className}`}
+      onClick={onClick}
+    >
       {
         prefixIconPath && (
           <Image 
@@ -68,6 +75,7 @@ const Button = ({
       {
         suffixIconPath && (
           <Image 
+            className={suffixIconClass}
             src={suffixIconPath}
             width={24}
             height={24}
