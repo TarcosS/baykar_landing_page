@@ -7,7 +7,7 @@ import { motion } from "framer-motion";
 const Intro = () => {
   return (
     <section className="relative z-10 flex flex-col items-center gap-8 px-4 py-12 md:gap-20 md:p-20 lg:flex-row">
-      <motion.div 
+      <motion.div
         initial={{ opacity: 0, y: -20 }}
         whileInView={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.6 }}
@@ -23,10 +23,12 @@ const Intro = () => {
           amet.
         </p>
         <div className="flex flex-row items-center justify-center space-x-4 text-amber-900 md:justify-start">
-          <Button 
+          <Button
             size="large"
-            className="hover:bg-amber-900 hover:bg-opacity-80 hover:text-white transition-colors"
-          >Sign up now</Button>
+            className="transition-colors hover:bg-amber-900 hover:bg-opacity-80 hover:text-white"
+          >
+            Sign up now
+          </Button>
           <Button
             prefixIconPath="/icons/play-circle.svg"
             className="border-none"
@@ -51,11 +53,11 @@ const Intro = () => {
             alt="Sneaker"
           />
         </motion.div>
-        <motion.div 
+        <motion.div
           className="absolute left-[38px] top-[38px] z-10 aspect-[367/372] w-4/5 rounded-[50px] bg-amber-400 sm:left-[51px] sm:top-[51px] sm:h-[372px] sm:w-[367px]"
           initial={{ opacity: 0, y: -40 }}
           whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: .8, delay: .2 }}
+          transition={{ duration: 0.8, delay: 0.2 }}
           viewport={{ once: true, amount: 0.8 }}
         ></motion.div>
       </div>

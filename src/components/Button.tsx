@@ -10,7 +10,7 @@ const Button = ({
   suffixIconPath,
   className = "",
   onClick,
-  suffixIconClass
+  suffixIconClass,
 }: {
   children: string;
   size?: "small" | "medium" | "large" | "xlarge";
@@ -21,13 +21,15 @@ const Button = ({
   suffixIconClass?: string;
 }) => {
   const [buttonStyle, setButtonStyle] = useState({
-    button: "p-3 border-2 rounded-lg border-amber-900 box-content flex flex-row items-center justify-center flex-none",
+    button:
+      "p-3 border-2 rounded-lg border-amber-900 box-content flex flex-row items-center justify-center flex-none",
     inner: "whitespace-nowrap font-medium group-hover:!text-slate-900",
   });
 
   useEffect(() => {
     var style = {
-      button: "border-2 rounded-lg border-amber-900 box-content flex flex-row items-center justify-center flex-none",
+      button:
+        "border-2 rounded-lg border-amber-900 box-content flex flex-row items-center justify-center flex-none",
       inner: "whitespace-nowrap font-medium group-hover:!text-slate-900",
     };
     var customizationStyle = { button: "p-3", inner: "px-4 text-base" };
@@ -57,32 +59,33 @@ const Button = ({
   }, [size]);
 
   return (
-    <button 
-      className={`${buttonStyle.button} ${className}`}
-      onClick={onClick}
-    >
-      {
-        prefixIconPath && (
-          <Image 
-            src={prefixIconPath}
-            width={24}
-            height={24}
-            alt={prefixIconPath.split("/")[prefixIconPath.split("/").length - 1].split(".")[0]}
-          />
-        )
-      }
+    <button className={`${buttonStyle.button} ${className}`} onClick={onClick}>
+      {prefixIconPath && (
+        <Image
+          src={prefixIconPath}
+          width={24}
+          height={24}
+          alt={
+            prefixIconPath
+              .split("/")
+              [prefixIconPath.split("/").length - 1].split(".")[0]
+          }
+        />
+      )}
       <div className={buttonStyle.inner}>{children}</div>
-      {
-        suffixIconPath && (
-          <Image 
-            className={suffixIconClass}
-            src={suffixIconPath}
-            width={24}
-            height={24}
-            alt={suffixIconPath.split("/")[suffixIconPath.split("/").length - 1].split(".")[0]}
-          />
-        )
-      }
+      {suffixIconPath && (
+        <Image
+          className={suffixIconClass}
+          src={suffixIconPath}
+          width={24}
+          height={24}
+          alt={
+            suffixIconPath
+              .split("/")
+              [suffixIconPath.split("/").length - 1].split(".")[0]
+          }
+        />
+      )}
     </button>
   );
 };

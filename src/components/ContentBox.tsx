@@ -1,4 +1,4 @@
-'use client';
+"use client";
 
 import Image from "next/image";
 import Button from "./Button";
@@ -16,7 +16,7 @@ const ContentBox = ({
   align,
   buttons,
   refContent,
-  author
+  author,
 }: {
   iconPath?: string;
   title?: string;
@@ -81,7 +81,7 @@ const ContentBox = ({
             <Button
               key={index}
               size="large"
-              className="border-white hover:bg-slate-50 hover:bg-opacity-10 transition-colors"
+              className="border-white transition-colors hover:bg-slate-50 hover:bg-opacity-10"
               prefixIconPath={button.iconPath}
             >
               {button.text}
@@ -90,28 +90,26 @@ const ContentBox = ({
         </div>
       )}
 
-      {
-        author && (
-          <div className="flex flex-row items-center gap-4 pt-4">
-            <div className="rounded-full max-h-16 max-w-16 overflow-hidden flex justify-center items-center">
-              <Image
-                src={nonUserSrc ?? author.imagePath}
-                width={64}
-                height={64}
-                alt="author"
-                className=""
-                onError={() => {
-                  setNonUserSrc('/images/no-user.png');
-                }}
-              />
-            </div>
-            <div className="flex flex-col">
-              <h1 className="text-lg">{author.name}</h1>
-              <p className="text-base text-slate-600">{author.role}</p>
-            </div>
+      {author && (
+        <div className="flex flex-row items-center gap-4 pt-4">
+          <div className="flex max-h-16 max-w-16 items-center justify-center overflow-hidden rounded-full">
+            <Image
+              src={nonUserSrc ?? author.imagePath}
+              width={64}
+              height={64}
+              alt="author"
+              className=""
+              onError={() => {
+                setNonUserSrc("/images/no-user.png");
+              }}
+            />
           </div>
-        )
-      }
+          <div className="flex flex-col">
+            <h1 className="text-lg">{author.name}</h1>
+            <p className="text-base text-slate-600">{author.role}</p>
+          </div>
+        </div>
+      )}
     </div>
   );
 };

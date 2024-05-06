@@ -8,8 +8,8 @@ import { motion } from "framer-motion";
 const JoinUs = () => {
   return (
     <section className="p-4 md:px-20 md:py-40">
-      <div className="grid grid-cols-1 relative gap-8 rounded-[30px] bg-white px-4 py-8 shadow-[0_20px_25px_-5px_rgba(0,0,0,0.1),0_0_10px_rgba(0,0,0,0.07)] md:gap-20 md:p-20 xl:grid-cols-2">
-        <div className="align flex flex-col items-center gap-6 text-slate-900 md:items-start relative z-20">
+      <div className="relative grid grid-cols-1 gap-8 rounded-[30px] bg-white px-4 py-8 shadow-[0_20px_25px_-5px_rgba(0,0,0,0.1),0_0_10px_rgba(0,0,0,0.07)] md:gap-20 md:p-20 xl:grid-cols-2">
+        <div className="align relative z-20 flex flex-col items-center gap-6 text-slate-900 md:items-start">
           <h1 className="text-center text-[32px] font-bold md:text-left md:text-[56px] md:font-extrabold">
             Why join us
           </h1>
@@ -34,7 +34,7 @@ const JoinUs = () => {
             <motion.div
               initial={{ opacity: 0, x: -20 }}
               whileInView={{ opacity: 1, x: 0 }}
-              transition={{ duration: 0.6, delay: .2 }}
+              transition={{ duration: 0.6, delay: 0.2 }}
               viewport={{ once: true, amount: 0.8 }}
               className="flex flex-row gap-1"
             >
@@ -51,7 +51,7 @@ const JoinUs = () => {
             <motion.div
               initial={{ opacity: 0, x: -20 }}
               whileInView={{ opacity: 1, x: 0 }}
-              transition={{ duration: 0.6, delay: .4 }}
+              transition={{ duration: 0.6, delay: 0.4 }}
               viewport={{ once: true, amount: 0.8 }}
               className="flex flex-row gap-1"
             >
@@ -66,9 +66,9 @@ const JoinUs = () => {
               </span>
             </motion.div>
           </div>
-          <Button 
-            size="large" 
-            className="w-fit text-amber-900 hover:bg-amber-900 hover:bg-opacity-80 hover:text-white transition-colors"
+          <Button
+            size="large"
+            className="w-fit text-amber-900 transition-colors hover:bg-amber-900 hover:bg-opacity-80 hover:text-white"
           >
             Sign up now
           </Button>
@@ -78,29 +78,29 @@ const JoinUs = () => {
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6 }}
           viewport={{ once: true, amount: 0.8 }}
-          className="md:!h-[350px] !aspect-[16/11] !w-full relative z-20"
+          className="relative z-20 !aspect-[16/11] !w-full md:!h-[350px]"
         >
-          <Screen 
-            className="!h-auto md:!h-[350px] !w-full 2xl:!w-auto !aspect-[16/11] 2xl:!aspect-[520/350] 2xl:absolute 2xl:right-0" 
-            src="/videos/video.mp4"  
+          <Screen
+            className="!aspect-[16/11] !h-auto !w-full md:!h-[350px] 2xl:absolute 2xl:right-0 2xl:!aspect-[520/350] 2xl:!w-auto"
+            src="/videos/video.mp4"
           />
         </motion.div>
-        <div className="absolute w-[440px] h-[386px] md:w-[713px] md:h-[625px] -right-[38px] -bottom-[75px]">
-          <div className="relative w-full h-full">
-            <div className="w-[56px] h-[56px] md:w-[90px] md:h-[90px] bg-amber-700 rounded-[30px] opacity-75 absolute left-[55px] top-0 md:top-[158px]"></div>
-            <div className="absolute bottom-[171px] md:bottom-[204px] md:left-[-20px] left-0">
-              <div className="w-[411px] h-[135px] md:w-[667px] md:h-[218px] bg-amber-200 relative -rotate-45">
-                <div className="w-[37px] h-[37px] md:w-[60px] md:h-[60px] bg-[#0369A1] opacity-75 rounded-[30px] absolute -right-[18.5px] md:-right-[30px] top-1/2 -translate-y-1/2"></div>
+        <div className="absolute -bottom-[75px] -right-[38px] h-[386px] w-[440px] md:h-[625px] md:w-[713px]">
+          <div className="relative h-full w-full">
+            <div className="absolute left-[55px] top-0 h-[56px] w-[56px] rounded-[30px] bg-amber-700 opacity-75 md:top-[158px] md:h-[90px] md:w-[90px]"></div>
+            <div className="absolute bottom-[171px] left-0 md:bottom-[204px] md:left-[-20px]">
+              <div className="relative h-[135px] w-[411px] -rotate-45 bg-amber-200 md:h-[218px] md:w-[667px]">
+                <div className="absolute -right-[18.5px] top-1/2 h-[37px] w-[37px] -translate-y-1/2 rounded-[30px] bg-[#0369A1] opacity-75 md:-right-[30px] md:h-[60px] md:w-[60px]"></div>
               </div>
             </div>
-            <div className="absolute right-0 bottom-[33px]">
-              <div className="w-[135px] h-[135px] md:w-[218px] md:h-[218px] bg-pink-700 opacity-75 rounded-[50px] relative">
-                <div className="w-[46px] h-[46px] md:w-[74px] md:h-[74px] bg-fuchsia-700 opacity-75 rounded-[30px] absolute top-1/2 -left-[23px] md:-left-[37px] -translate-y-1/2"></div>
+            <div className="absolute bottom-[33px] right-0">
+              <div className="relative h-[135px] w-[135px] rounded-[50px] bg-pink-700 opacity-75 md:h-[218px] md:w-[218px]">
+                <div className="absolute -left-[23px] top-1/2 h-[46px] w-[46px] -translate-y-1/2 rounded-[30px] bg-fuchsia-700 opacity-75 md:-left-[37px] md:h-[74px] md:w-[74px]"></div>
               </div>
             </div>
           </div>
         </div>
-        <div className="w-[49px] h-[50px] md:w-[85px] md:h-[86px] bg-green-700 opacity-75 rounded-[50px] absolute -bottom-[14px] md:bottom-0 right-[75%] md:right-[35%] -translate-y-1/2 z-40"></div>
+        <div className="absolute -bottom-[14px] right-[75%] z-40 h-[50px] w-[49px] -translate-y-1/2 rounded-[50px] bg-green-700 opacity-75 md:bottom-0 md:right-[35%] md:h-[86px] md:w-[85px]"></div>
       </div>
     </section>
   );

@@ -1,4 +1,4 @@
-'use client';
+"use client";
 import Image from "next/image";
 import { useEffect, useRef, useState } from "react";
 
@@ -27,10 +27,8 @@ const Screen = ({
   }, []);
 
   useEffect(() => {
-    isPlaying
-      ? videoRef.current?.play()
-      : videoRef.current?.pause()
-  }, [isPlaying])
+    isPlaying ? videoRef.current?.play() : videoRef.current?.pause();
+  }, [isPlaying]);
 
   return (
     <div
@@ -68,42 +66,43 @@ const Screen = ({
           borderTopWidth: header ? "0px" : "5px",
         }}
       >
-        {
-          isSourceTypeVideo ? (
-            <div className="relative">
-              <video
-                className="h-full w-full rounded-b-[16px]"
-                ref={videoRef}
-                muted
-                playsInline
-              >
-                <source src={src} type="video/mp4" />
-              </video>
-              <div 
-                className={"absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 bg-[#121619bf] py-6 ps-6 pe-5 rounded-full cursor-pointer transition-opacity" + (isPlaying ? " opacity-0 hover:opacity-100" : " opacity-100")}
-                onClick={controlPlaying}
-              >
-                <Image
-                  src={isPlaying ? "/icons/round-pause.svg" :"/icons/play.svg"}
-                  width={40}
-                  height={40}
-                  alt="play"
-                />
-              </div>
-            </div>
-          ) : (
+        {isSourceTypeVideo ? (
+          <div className="relative">
+            <video
+              className="h-full w-full rounded-b-[16px]"
+              ref={videoRef}
+              muted
+              playsInline
+            >
+              <source src={src} type="video/mp4" />
+            </video>
             <div
-              className="h-full w-full rounded-b-[16px]  bg-amber-300"
-              style={{
-                borderTopLeftRadius: header ? "0px" : "16px",
-                borderTopRightRadius: header ? "0px" : "16px",
-                backgroundImage: `url(${src})`,
-                backgroundRepeat: "no-repeat",
-                backgroundSize: "cover",
-              }}
-            ></div>
-          )
-        }
+              className={
+                "absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 cursor-pointer rounded-full bg-[#121619bf] py-6 pe-5 ps-6 transition-opacity" +
+                (isPlaying ? " opacity-0 hover:opacity-100" : " opacity-100")
+              }
+              onClick={controlPlaying}
+            >
+              <Image
+                src={isPlaying ? "/icons/round-pause.svg" : "/icons/play.svg"}
+                width={40}
+                height={40}
+                alt="play"
+              />
+            </div>
+          </div>
+        ) : (
+          <div
+            className="h-full w-full rounded-b-[16px]  bg-amber-300"
+            style={{
+              borderTopLeftRadius: header ? "0px" : "16px",
+              borderTopRightRadius: header ? "0px" : "16px",
+              backgroundImage: `url(${src})`,
+              backgroundRepeat: "no-repeat",
+              backgroundSize: "cover",
+            }}
+          ></div>
+        )}
       </div>
     </div>
   );

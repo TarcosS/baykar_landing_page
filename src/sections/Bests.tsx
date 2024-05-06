@@ -7,12 +7,12 @@ const Bests = () => {
   return (
     <section className="relative z-10 flex flex-col items-center gap-8 bg-slate-900 px-4 py-12 md:gap-20 md:p-20">
       <div className="relative z-10 flex w-full flex-col items-center justify-between gap-8 md:flex-row">
-        <h1 className="text-[32px] font-bold md:text-[56px] md:font-extrabold text-white">
+        <h1 className="text-[32px] font-bold text-white md:text-[56px] md:font-extrabold">
           The best of the best
         </h1>
-        <Button 
-          size="xlarge" 
-          className="border-white hover:bg-white hover:bg-opacity-10 *:text-white transition-colors"
+        <Button
+          size="xlarge"
+          className="border-white transition-colors *:text-white hover:bg-white hover:bg-opacity-10"
         >
           Sign up now
         </Button>

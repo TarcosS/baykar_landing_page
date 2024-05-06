@@ -8,7 +8,7 @@ import Slider, { Settings } from "react-slick";
 
 const settings: Settings = {
   centerPadding: "0px",
-  className: 'cursor-grab',
+  className: "cursor-grab",
   centerMode: true,
   infinite: true,
   slidesToShow: 1,
@@ -20,11 +20,11 @@ const settings: Settings = {
       settings: {
         slidesToShow: 1,
         slidesToScroll: 1,
-        initialSlide: 1
-      }
-    }
-  ]
-}
+        initialSlide: 1,
+      },
+    },
+  ],
+};
 
 const CarouselSection = () => {
   const contentRef = useRef<HTMLDivElement>();
@@ -34,7 +34,7 @@ const CarouselSection = () => {
   function controlSlider(type?: "next" | "previous") {
     const slider: Slider | undefined = sliderRef.current;
 
-    if(slider) {
+    if (slider) {
       if (type === "next") {
         slider.slickNext();
       } else if (type === "previous") {
@@ -73,7 +73,7 @@ const CarouselSection = () => {
         </div>
       </div>
       <div className="relative flex justify-center">
-        <div className="absolute left-1/2 top-[-16px] md:top-[-40px] h-[300px] md:h-[421px] w-[100dvh] -translate-x-1/2 bg-amber-200 md:w-[calc(100dvw-80px)]"></div>
+        <div className="absolute left-1/2 top-[-16px] h-[300px] w-[100dvh] -translate-x-1/2 bg-amber-200 md:top-[-40px] md:h-[421px] md:w-[calc(100dvw-80px)]"></div>
         <div className="!w-[335px] md:!w-[400px] lg:!w-[408px]">
           <Slider {...settings} ref={sliderRef}>
             {carouselData.map((data, index) => {
@@ -81,7 +81,7 @@ const CarouselSection = () => {
                 <ContentBox
                   refContent={contentRef}
                   key={index}
-                  className="border-1 w-[319px] !items-start flex-none snap-center gap-4 overflow-hidden rounded-[20px] border-solid border-slate-200 bg-white p-6 md:p-8 text-black shadow-[0_10px_15px_-3px_rgba(0,0,0,0.10),0_0_6px_rgba(0,0,0,0.07)] md:w-[384px]"
+                  className="border-1 w-[319px] flex-none snap-center !items-start gap-4 overflow-hidden rounded-[20px] border-solid border-slate-200 bg-white p-6 text-black shadow-[0_10px_15px_-3px_rgba(0,0,0,0.10),0_0_6px_rgba(0,0,0,0.07)] md:w-[384px] md:p-8"
                   iconClassName="py-4"
                   textClassName="!text-base md:!text-2xl md:!leading-10"
                   iconPath={data.iconPath}

@@ -73,49 +73,47 @@ const Grow = () => {
             </Button>
           ))}
         </div>
-        <div className="relative h-[356px] md:h-[556px] w-full 2xl:w-[944px] 2xl:ms-auto">
-          {
-            selectedTabIndex !== null && (
-              <div key={selectedTabIndex}>
-                <motion.div
-                  initial={{ opacity: 0, y: -20 }}
-                  whileInView={{ opacity: 1, y: 0 }}
-                  transition={{duration: 0.6 }}
-                  viewport={{ once: true, amount: 0.8 }}
-                >
-                  <Screen 
-                    className="!h-[201px] !w-[80%] sm:!h-[320px] md:!h-[451px] md:!w-[759px] shadow-[0_25px_50px_-12px_rgba(0,0,0,0.25),0_0_15px_rgba(0,0,0,0.07)]"
-                    src="/images/grow-1.png"
-                   />
-                </motion.div>
-                <motion.div
-                  initial={{ opacity: 0, y: -20 }}
-                  whileInView={{ opacity: 1, y: 0 }}
-                  transition={{delay: .1, duration: 0.6 }}
-                  viewport={{ once: true, amount: 0.8 }}
-                  className="absolute left-[57px] top-[36px] md:left-[94px] md:top-[105px] w-full"
-                >
-                  <Screen 
-                    className="!h-[201px] !w-[80%] sm:!h-[320px] md:!h-[451px] md:!w-[759px] shadow-[0_25px_50px_-12px_rgba(0,0,0,0.25),0_0_15px_rgba(0,0,0,0.07)]"
-                    src="/images/grow-2.png"
-                  />
-                </motion.div>
-                <motion.div
-                  initial={{ opacity: 0, y: -20 }}
-                  whileInView={{ opacity: 1, y: 0 }}
-                  transition={{delay: .2, duration: 0.6 }}
-                  viewport={{ once: true, amount: 0.8 }}
-                  className="absolute right-0 top-[110px] md:top-[202px]"
-                >
-                  <Screen
-                    className="!h-[105px] !w-[94px] sm:!h-[220px] sm:!w-[200px] md:!h-[286px] md:!w-[256px] shadow-[0_25px_50px_-12px_rgba(0,0,0,0.25),0_0_15px_rgba(0,0,0,0.07)]"
-                    src="/images/grow-3.png"
-                    header={false}
-                  />
-                </motion.div>
-              </div>
-            )
-          }
+        <div className="relative h-[356px] w-full md:h-[556px] 2xl:ms-auto 2xl:w-[944px]">
+          {selectedTabIndex !== null && (
+            <div key={selectedTabIndex}>
+              <motion.div
+                initial={{ opacity: 0, y: -20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.6 }}
+                viewport={{ once: true, amount: 0.8 }}
+              >
+                <Screen
+                  className="!h-[201px] !w-[80%] shadow-[0_25px_50px_-12px_rgba(0,0,0,0.25),0_0_15px_rgba(0,0,0,0.07)] sm:!h-[320px] md:!h-[451px] md:!w-[759px]"
+                  src="/images/grow-1.png"
+                />
+              </motion.div>
+              <motion.div
+                initial={{ opacity: 0, y: -20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                transition={{ delay: 0.1, duration: 0.6 }}
+                viewport={{ once: true, amount: 0.8 }}
+                className="absolute left-[57px] top-[36px] w-full md:left-[94px] md:top-[105px]"
+              >
+                <Screen
+                  className="!h-[201px] !w-[80%] shadow-[0_25px_50px_-12px_rgba(0,0,0,0.25),0_0_15px_rgba(0,0,0,0.07)] sm:!h-[320px] md:!h-[451px] md:!w-[759px]"
+                  src="/images/grow-2.png"
+                />
+              </motion.div>
+              <motion.div
+                initial={{ opacity: 0, y: -20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                transition={{ delay: 0.2, duration: 0.6 }}
+                viewport={{ once: true, amount: 0.8 }}
+                className="absolute right-0 top-[110px] md:top-[202px]"
+              >
+                <Screen
+                  className="!h-[105px] !w-[94px] shadow-[0_25px_50px_-12px_rgba(0,0,0,0.25),0_0_15px_rgba(0,0,0,0.07)] sm:!h-[220px] sm:!w-[200px] md:!h-[286px] md:!w-[256px]"
+                  src="/images/grow-3.png"
+                  header={false}
+                />
+              </motion.div>
+            </div>
+          )}
         </div>
       </div>
       <div className="absolute bottom-0 left-0">

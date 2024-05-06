@@ -28,7 +28,11 @@ const Marker = ({
       <div className="relative hidden group-hover:block">
         <div
           className="absolute left-1/2 -translate-x-1/2"
-          style={{ "--tw-translate-y": `${(radius - 6) / 2}px` } as React.CSSProperties}
+          style={
+            {
+              "--tw-translate-y": `${(radius - 6) / 2}px`,
+            } as React.CSSProperties
+          }
         >
           <div
             className={`absolute left-1/2 z-10 !h-[200px] !w-[256px] -translate-x-1/2 shadow-[0_20px_25px_-5px_rgba(0,0,0,0.1),0_0_10px_rgba(0,0,0,0.07)]`}

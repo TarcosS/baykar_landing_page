@@ -12,15 +12,13 @@ import "slick-carousel/slick/slick-theme.css";
 
 export default function Home() {
   return (
-    <div
-      className="bg-gradient-to-b from-amber-50 to-white min-h-screen overflow-x-hidden"
-    >
+    <div className="min-h-screen overflow-x-hidden bg-gradient-to-b from-amber-50 to-white">
       <Navbar />
       <div className="relative">
         <Intro />
         <Attribute />
         <div
-          className="absolute bottom-0 aspect-[1428/806] 2xl:aspect-[2200/806] w-[99%] bg-amber-100 right-0 hidden lg:block"
+          className="absolute bottom-0 right-0 hidden aspect-[1428/806] w-[99%] bg-amber-100 lg:block 2xl:aspect-[2200/806]"
           style={{
             clipPath: "polygon(100% 0, 0 100%, 100% 100%)",
           }}
